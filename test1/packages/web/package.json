@@ -1,0 +1,12 @@
+{
+  "name": "@project/web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "scripts": {
+    "test": "echo test $npm_package_name"
+  }
+}

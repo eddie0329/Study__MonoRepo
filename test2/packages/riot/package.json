@@ -1,0 +1,47 @@
+{
+  "name": "@project/riot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "test": "echo test $npm_package_name",
+    "build:local-client": "vue-cli-service build --mode local",
+    "build:local-server": "WEBPACK_TARGET=node vue-cli-service build --mode local",
+    "build:local": "npm run build:local-server && mv dist/vue-ssr-server-bundle.json bundle && npm run build:local-client && mv bundle dist/vue-ssr-server-bundle.json",
+    "start": "node server"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@project/shared": "1.0.0",
+    "core-js": "^3.6.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.46.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "_id": "@project/web@1.0.0",
+  "license": "MIT"
+}

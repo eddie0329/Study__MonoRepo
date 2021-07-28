@@ -1,0 +1,15 @@
+{
+  "name": "Study__MonoRepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/eddie0329/Study__MonoRepo.git",
+  "author": "eddie0329 <fdsa0329@naver.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

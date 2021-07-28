@@ -1,0 +1,9 @@
+{
+  "name": "@project/shared",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo test $npm_package_name"
+  }
+}
