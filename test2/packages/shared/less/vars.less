@@ -1,0 +1,11 @@
+@screen-mm-min: unit(@SCREEN_MM, px);
+@screen-tv-min: unit(@SCREEN_TV, px); //768
+@screen-tw-min: unit(@SCREEN_TW, px); //1024
+@screen-ds-min: unit(@SCREEN_DS, px); //1280
+@screen-dl-min: unit(@SCREEN_DL, px); //1600
+
+@screen-ms-max: (@screen-mm-min - 1);
+@screen-ml-max: (@screen-tv-min - 1);
+@screen-tv-max: (@screen-tw-min - 1);
+@screen-tw-max: (@screen-ds-min - 1);
+@screen-dm-max: (@screen-dl-min - 1);

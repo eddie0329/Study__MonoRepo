@@ -1,4 +1,5 @@
-require("dotenv").config();
+const workspaceRoot = require("find-yarn-workspace-root");
+require("dotenv").config({ path: `${workspaceRoot()}/.env` });
 const path = require("path");
 const express = require("express");
 const server = express();

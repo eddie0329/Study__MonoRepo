@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import MyInput from './Input.vue';
+
+<Meta title="Input" />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { MyInput },
+  data: () => ({
+    propsData: {
+      title: 'Hello World',
+      v: '',
+    }
+  }),
+  template: `<MyInput v-model="propsData" />`
+});
+
+## MyInput
+
+<Canvas>
+  <Story name="default">{Template.bind({})}</Story>
+</Canvas>

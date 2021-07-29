@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --mode local",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "test": "echo test $npm_package_name",
     "build:local-client": "vue-cli-service build --mode local",
-    "build:local-server": "WEBPACK_TARGET=node vue-cli-service build --mode local",
+    "build:local-server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode local",
     "build:local": "npm run build:local-server && mv dist/vue-ssr-server-bundle.json bundle && npm run build:local-client && mv bundle dist/vue-ssr-server-bundle.json",
     "start": "node server"
   },
@@ -19,6 +19,7 @@
     "core-js": "^3.6.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "find-yarn-workspace-root": "^2.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
