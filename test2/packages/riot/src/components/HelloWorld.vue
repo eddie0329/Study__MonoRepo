@@ -43,8 +43,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import '~@/less/proj.less';
-
 h3 {
   margin: 40px 0 0;
 }
