@@ -1,3 +1,3 @@
-const axios = require('axios');
+const temp = require('@project/shared');
 
-console.log(axios);
+temp();
