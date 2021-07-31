@@ -11,27 +11,28 @@ const TARGET_NODE = process.env.WEBPACK_TARGET === "node";
 const {
   VUE_APP_SCREEN_MM,
   VUE_APP_SCREEN_ML,
-  VUE_APP_SCREEN_TP,
-  VUE_APP_SCREEN_TL,
+  VUE_APP_SCREEN_TV,
+  VUE_APP_SCREEN_TW,
   VUE_APP_SCREEN_DS,
   VUE_APP_SCREEN_DM,
   VUE_APP_SCREEN_DL,
 } = process.env;
+
 
 module.exports = {
   css: {
     sourceMap: true,
     loaderOptions: {
       less: {
-        additionalData: `
-          @SCREEN_MM: ${VUE_APP_SCREEN_MM};
-          @SCREEN_ML: ${VUE_APP_SCREEN_ML};
-          @SCREEN_TP: ${VUE_APP_SCREEN_TP};
-          @SCREEN_TL: ${VUE_APP_SCREEN_TL};
-          @SCREEN_DS: ${VUE_APP_SCREEN_DS};
-          @SCREEN_DM: ${VUE_APP_SCREEN_DM};
-          @SCREEN_DL: ${VUE_APP_SCREEN_DL};
-        `,
+        globalVars: {
+          '@SCREEN_MM': VUE_APP_SCREEN_MM,
+          '@SCREEN_ML': VUE_APP_SCREEN_ML,
+          '@SCREEN_TV': VUE_APP_SCREEN_TV,
+          '@SCREEN_TW': VUE_APP_SCREEN_TW,
+          '@SCREEN_DS': VUE_APP_SCREEN_DS,
+          '@SCREEN_DM': VUE_APP_SCREEN_DM,
+          '@SCREEN_DL': VUE_APP_SCREEN_DL,
+        },
       },
     },
   },

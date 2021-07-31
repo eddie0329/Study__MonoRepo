@@ -1,19 +1,18 @@
-const path = require('path');
-const rootPath = path.resolve(__dirname, '../');
+const path = require("path");
+const rootPath = path.resolve(__dirname, "../");
 const workspaceRoot = require("find-yarn-workspace-root");
 const dotenv = require("dotenv");
 dotenv.config({ path: `${workspaceRoot()}/.env` });
 
-// TODO:
-// const {
-//   VUE_APP_SCREEN_MM,
-//   VUE_APP_SCREEN_ML,
-//   VUE_APP_SCREEN_TV,
-//   VUE_APP_SCREEN_TW,
-//   VUE_APP_SCREEN_DS,
-//   VUE_APP_SCREEN_DM,
-//   VUE_APP_SCREEN_DL,
-// } = process.env;
+const {
+  VUE_APP_SCREEN_MM,
+  VUE_APP_SCREEN_ML,
+  VUE_APP_SCREEN_TV,
+  VUE_APP_SCREEN_TW,
+  VUE_APP_SCREEN_DS,
+  VUE_APP_SCREEN_DM,
+  VUE_APP_SCREEN_DL,
+} = process.env;
 
 module.exports = {
   stories: [
@@ -26,23 +25,26 @@ module.exports = {
     config.module.rules.push({
       test: /.*\.less$/,
       use: [
-        'vue-style-loader',
-        'css-loader',
+        "vue-style-loader",
+        "css-loader",
         {
-          loader: 'less-loader',
+          loader: "less-loader",
           options: {
-            additionalData: `
-            @SCREEN_MM: ${360};
-            @SCREEN_TV: ${768};
-            @SCREEN_TW: ${1024};
-            @SCREEN_DS: ${1280};
-            @SCREEN_DL: ${1600};
-          `,
+            globalVars: {
+              "@SCREEN_MM": VUE_APP_SCREEN_MM,
+              "@SCREEN_ML": VUE_APP_SCREEN_ML,
+              "@SCREEN_TV": VUE_APP_SCREEN_TV,
+              "@SCREEN_TW": VUE_APP_SCREEN_TW,
+              "@SCREEN_DS": VUE_APP_SCREEN_DS,
+              "@SCREEN_DM": VUE_APP_SCREEN_DM,
+              "@SCREEN_DL": VUE_APP_SCREEN_DL,
+            },
+            data: `@import "~@/less/common.less"`,
           },
         },
       ],
     });
-    config.resolve.alias['@'] = rootPath;
+    config.resolve.alias["@"] = rootPath;
     return config;
-  }
+  },
 };
