@@ -1,0 +1,16 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --build",
+    "start": "yarn build && node dist/index.js"
+  },
+  "dependencies": {
+    "@proejct/shared": "1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}

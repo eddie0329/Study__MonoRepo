@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "fe": "yarn workspace front start",
+    "shared": "yarn workspace shared"
+  }
+}
